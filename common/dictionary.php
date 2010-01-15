@@ -16,8 +16,12 @@ class dictionary
     fclose($handle);
   }
 
-  public function matchingwords($str, $min_word_length = 1)
+  public function matchingwords($str, $min_word_length = 0)
   {
+    global $options;    
+    if($min_word_length == 0)
+      $min_word_length = $options['match-length'];
+
     $str = str_replace(array(" ", "\n", "\r", "\t"), "", $str);
     $matches = array();
 
