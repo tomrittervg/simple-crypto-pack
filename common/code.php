@@ -13,7 +13,7 @@ class code implements ArrayAccess
     global $options;
     $this->loadcipher();
     if($options['verbose'])
-      echo "Ciphertext:\n$this";
+      echo "Ciphertext:\n$this\n";
   }
 
   private function loadcipher()

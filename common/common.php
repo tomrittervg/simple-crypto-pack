@@ -5,9 +5,11 @@ require("dictionary.php");
 
 $options = array();
 
-$tmp = getopt("vd", array("match-length:"));
+$tmp = getopt("vd", array("match-length:", "key:"));
+
 $options['debug'] = isset($tmp['d']);
 $options['verbose'] = isset($tmp['v']);
-$options['match-length'] = isset($tmp['match-length']) ? $tmp['match-length'] : 2;
+$options['match-length'] = isset($tmp['match-length']) ? $tmp['match-length'] : 5;
+if(isset($tmp['key'])) $options['key'] = $tmp['key'];
 
 unset($tmp);

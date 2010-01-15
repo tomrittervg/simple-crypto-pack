@@ -1,6 +1,6 @@
 <?php
 
-class dictionary
+class dictionary implements Iterator
 {
   private $words = array();
 
@@ -18,7 +18,7 @@ class dictionary
 
   public function matchingwords($str, $min_word_length = 0)
   {
-    global $options;    
+    global $options;
     if($min_word_length == 0)
       $min_word_length = $options['match-length'];
 
@@ -27,13 +27,37 @@ class dictionary
 
     for($i=0; $i<count($this->words); $i++)
       {
-	if(CIPHERTEXT_CASE =="lowercase") $test = strtolower($this->words[$i]);
-	else if(CIPHERTEXT_CASE =="uppercase") $test = strtoupper($this->words[$i]);
-	else $test = $this->words[$i];
+        if(CIPHERTEXT_CASE =="lowercase") $test = strtolower($this->words[$i]);
+        else if(CIPHERTEXT_CASE =="uppercase") $test = strtoupper($this->words[$i]);
+        else $test = $this->words[$i];
 
         if(strlen($test) >= $min_word_length && (strpos($str, $test) !== false))
           $matches[] = $test;
       }
     return $matches;
+  }
+
+  public function rewind() {
+    reset($this->words);
+  }
+
+  public function current() {
+    $var = current($this->words);
+    return $var;
+  }
+
+  public function key() {
+    $var = key($this->words);
+    return $var;
+  }
+
+  public function next() {
+    $var = next($this->words);
+    return $var;
+  }
+
+  public function valid() {
+    $var = $this->current() !== false;
+    return $var;
   }
 }
