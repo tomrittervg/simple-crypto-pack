@@ -1,4 +1,7 @@
 
 /ciphertext.txt
+
+#these are symlinks:
 /ceaser.php
 /vigenere.php
+/frequency.php

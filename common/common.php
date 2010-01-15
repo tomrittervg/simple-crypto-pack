@@ -2,6 +2,8 @@
 
 require("code.php");
 require("dictionary.php");
+require("frequencies.php");
+require("print-functions.php");
 
 $options = array();
 
