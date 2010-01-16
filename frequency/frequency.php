@@ -16,6 +16,9 @@ if($options['verbose'])
 
 $max = max($table);
 
+echo "The cipher is " . strlen($ciphertext) . " characters long including whitespace.\n";
+echo "The cipher is " . strlen(strip_whitespace($ciphertext)) . " characters long without whitespace.\n";
+
 echo "Ciphertext Frequency:\n";
 print_frequency_graph($table, $offset);
 

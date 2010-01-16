@@ -15,12 +15,14 @@ else
   $keys = $dict;
 
 
-echo "Running Index of Coincidence Tests for keylengths 1-10...\n";
-for($i=1; $i<11; $i++)
+echo "Running Index of Coincidence Tests for keylengths 1-".$options['index-of-coincidence']."...\n";
+for($i=1; $i<$options['index-of-coincidence']+1; $i++)
   {
     print_coincidence_columnsplit($ciphertext, $i);
   }
 print_english_coincidence();
+
+if($options['index-only']) exit;
 
 echo "\nRunning Key Tests...\n";
 foreach($keys as $key)
