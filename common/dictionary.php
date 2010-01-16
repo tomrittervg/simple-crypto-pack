@@ -22,7 +22,7 @@ class dictionary implements Iterator
     if($min_word_length == 0)
       $min_word_length = $options['match-length'];
 
-    $str = str_replace(array(" ", "\n", "\r", "\t"), "", $str);
+    $str = strip_whitespace($str);
     $matches = array();
 
     for($i=0; $i<count($this->words); $i++)

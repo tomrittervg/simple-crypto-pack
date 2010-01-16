@@ -15,7 +15,14 @@ else
   $keys = $dict;
 
 
+echo "Running Index of Coincidence Tests for keylengths 1-10...\n";
+for($i=1; $i<11; $i++)
+  {
+    print_coincidence_columnsplit($ciphertext, $i);
+  }
+print_english_coincidence();
 
+echo "\nRunning Key Tests...\n";
 foreach($keys as $key)
   {
     if(CIPHERTEXT_CASE =="lowercase") $key = strtolower($key);

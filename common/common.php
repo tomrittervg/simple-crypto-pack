@@ -3,7 +3,9 @@
 require("code.php");
 require("dictionary.php");
 require("frequencies.php");
+require("index_of_coincidence.php");
 require("print-functions.php");
+require("str-functions.php");
 
 $options = array();
 

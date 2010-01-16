@@ -9,6 +9,9 @@ $dict = new dictionary();
 
 $offset = ord($ciphertext->getReferenceLetterA());
 
+print_coincidence($ciphertext);
+print_english_coincidence();
+
 for($c=0; $c<26; $c++)
   {
     $shifted = "";

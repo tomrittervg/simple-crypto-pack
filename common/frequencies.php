@@ -1,5 +1,14 @@
 <?php
 
+function get_frequency_array($s)
+{
+  $f = array();
+  for($i=0; $i<strlen($s); $i++)
+    $f[$s[$i]] += 1;
+  ksort($f);
+  return $f;
+}
+
 $frequencies = array();
 
 //relative - space is included in the percentage, but omitted here

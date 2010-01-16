@@ -6,14 +6,8 @@ require(INCLUDE_PATH . "common/common.php");
 
 $ciphertext = new code();
 $offset = ord($ciphertext->getReferenceLetterA());
-$table = array();
 
-for($i=0; $i<$ciphertext->length; $i++)
-  {
-    $table[$ciphertext[$i]] += 1;
-  }
-
-ksort($table);
+$table = get_frequency_array($ciphertext);
 
 if($options['verbose'])
   print_r($table);
