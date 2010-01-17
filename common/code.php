@@ -1,7 +1,7 @@
 <?php
 
-//define("CIPHERTEXT_CASE", "lowercase");
-define("CIPHERTEXT_CASE", "uppercase");
+define("CIPHERTEXT_CASE", "lowercase");
+//define("CIPHERTEXT_CASE", "uppercase");
 //lowercase,uppercase,none
 
 class code implements ArrayAccess

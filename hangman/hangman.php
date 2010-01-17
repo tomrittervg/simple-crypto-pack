@@ -88,7 +88,7 @@ do
             }
 
           $replacements[$sides[0]] = $sides[1];
-          $tempguess = str_replace(strtoupper($sides[0]), $sides[1], $tempguess);
+          $tempguess = str_replace(strtoupper($sides[0]), "\033[91m" . $sides[1] . "\033[0m", $tempguess);
           echo $tempguess;
 	  echo "\n";
 	  printreplacements($replacements);
