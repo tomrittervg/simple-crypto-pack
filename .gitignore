@@ -1,5 +1,7 @@
 
 /ciphertext.txt
+/ciphertext.normal.txt
+/ciphertext.rev.txt
 
 #these are symlinks:
 /ceaser.php
@@ -7,3 +9,4 @@
 /frequency.php
 /hangman.php
 /affine.php
+/permute.php
