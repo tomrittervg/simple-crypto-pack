@@ -23,6 +23,6 @@ echo "Ciphertext Frequency:\n";
 print_frequency_graph($table, $offset);
 
 echo "\nNormal English Frequency:\n";
-print_frequency_graph($frequencies['normal-english'], $offset);
+print_frequency_graph($frequencies['normal-english'], ord('a'));
 
 echo "\n";
