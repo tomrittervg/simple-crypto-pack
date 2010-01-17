@@ -25,4 +25,17 @@ print_frequency_graph($table, $offset);
 echo "\nNormal English Frequency:\n";
 print_frequency_graph($frequencies['normal-english'], ord('a'));
 
+$table = get_digraph_frequency_array($ciphertext);
+$max = max($table);
+$min = min($table);
+if($min + 2 > $max)
+  echo "\nDigraph Frequency is flat - not bothering...\n";
+else
+  {
+    echo "\nDigraphs:\n";
+    print_literal_frequency_graph($table, 2);
+    
+    echo "\nEnglish Digraphs:\n";
+    print_literal_frequency_graph($frequencies['english-digraph'], 2);
+  }
 echo "\n";
