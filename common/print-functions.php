@@ -1,6 +1,6 @@
 <?php
 
-function print_frequency_graph($a, $offset)
+function print_alpha_frequency_graph($a, $offset)
 {
   $max = max($a);
 
@@ -28,10 +28,9 @@ function print_frequency_graph($a, $offset)
 function print_literal_frequency_graph($a, $keylen)
 {
   $max = max($a);
-  echo $max . "\n";
   
   foreach($a as $k=>$v)
-    echo str_pad($k, $keylen) . " ";
+    echo str_pad(whitespace_escape($k), $keylen) . " ";
   echo "\n";
   for($i=0; $i<count($a); $i++)
     echo str_pad("", $keylen, "-") . "-";
