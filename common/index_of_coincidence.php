@@ -6,7 +6,11 @@ function print_coincidence($ciphertext)
 }
 function print_coincidence_columnsplit($ciphertext, $l)
 {
-  echo "Index of Coincidence over text for split of $l: " . compute_index_of_coincidence_columnsplit($ciphertext, $l) . "\n";
+  $len = strlen(strip_whitespace($ciphertext));
+  if(($len / 2) < $l)
+    echo "Cannot compute an index of " . $l . " - string too short.\n";
+  else
+    echo "Index of Coincidence over text for split of $l: " . compute_index_of_coincidence_columnsplit($ciphertext, $l) . "\n";
 }
 function print_english_coincidence()
 {
