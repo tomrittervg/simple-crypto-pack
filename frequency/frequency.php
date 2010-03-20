@@ -44,6 +44,10 @@ else
     print_literal_frequency_graph($frequencies['english-digraph'], 2);
   }
 
+echo "Testing Digraphs for digraphs that basically never happen:\n";
+print_odd_men_out($digraph_table, $frequencies['english-digraphs-that-never-happen']);
+echo "\n";
+
 //Doubles
 function isdouble($k) { return $k[0] == $k[1]; }
 $good_keys = array_filter(array_keys($digraph_table), "isdouble");

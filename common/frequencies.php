@@ -76,3 +76,9 @@ $frequencies['english-digraph'] = array(
 					'as' => 0.33,
 					'te' => 0.27,
 					'et' => 0.19 );
+$frequencies['english-digraphs-that-never-happen'] = array('ae','aj','bj','bm','bs','bt','cd','cf','cm','cn','cs','cw','cy','dj','dy','ej',
+							   'ez','fd','fg','fm','fp','fw','fy','gd','gg','gj','gm','gw','hb','hl','hp','hq',
+							   'hw','hy','ja','ka','kc','kl','kn','ks','lg','lh','ln','md','mf','mh','nj','nq',
+							   'oj','ox','pb','pc','pd','pn','pv','pw','py','qm','qr','rj','rk','sk','sv','sy',
+							   'tg','tq','tz','uf','uo','uv','vo','vt','wl','wr','ws','wy','xd','xe','xf','xh',
+							   'xn','xo','xr','xs','yg','yh','yu','yw','za','zi');

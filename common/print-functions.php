@@ -48,3 +48,18 @@ function print_literal_frequency_graph($a, $keylen)
       echo "\n";
     }
 }
+
+function print_odd_men_out($freq, $odd)
+{
+  $totalMen = 0;
+  $oddMen = 0;
+  
+  foreach($freq as $man => $f)
+    {
+      $totalMen += $f;
+      if(in_array($man, $odd))
+	$oddMen += $f;
+    }
+  
+  echo "Out of a total of $totalMen, $oddMen are odd men out, or " . round(($oddMen / $totalMen) * 100, 2) . "%.\n";
+}
