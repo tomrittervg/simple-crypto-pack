@@ -6,6 +6,7 @@ require("frequencies.php");
 require("index_of_coincidence.php");
 require("print-functions.php");
 require("str-functions.php");
+require("permute-functions.php");
 
 $options = array();
 
