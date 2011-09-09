@@ -46,7 +46,7 @@ for($z=0; $z<$maxlength; $z++)
 echo "\n\n";
 
 
-echo "Now trying every nth letter:\n";
+echo "Now trying every nth letter.\n";
 
 for($z=1; $z < $ciphertext->length; $z++)
   {
@@ -71,3 +71,54 @@ for($z=1; $z < $ciphertext->length; $z++)
   }
 
 echo "\n\n";
+
+echo "Now trying columnar transpositions.\n";
+
+for($cols=2; $cols < $ciphertext->length / 2 && $cols < 9; $cols++)
+  {
+    $columns = permute_into_columns($ciphertext, $cols);
+    
+    $indexes = array();
+    for($i=0; $i<$cols; $i++)
+      $indexes[] = $i;
+
+    $allorders = allorderings($indexes);
+
+    foreach($allorders as $thisorder)
+      {
+	$newciphertext = "";
+	
+	$stillhaschars = true;
+	$charindex = 0;
+	while($stillhaschars)
+	  {
+	    $stillhaschars = false;
+	    foreach($thisorder as $i)
+	      {
+		if($charindex < strlen($columns[$i]))
+		  {
+		    $stillhaschars = true;
+		    $newciphertext .= $columns[$i][$charindex];
+		  }
+	      }
+	    $charindex++;
+	  }
+	
+	$matches = $dict->matchingwords($newciphertext);
+	if(count($matches) > 0)
+	  {
+	    echo "Column Transposition of ".($cols)." columns order ".join(' ', $thisorder)." produced matches:\n";
+	    echo "  " . implode(", ", $matches) . "\n";
+	    echo $newciphertext . "\n\n";
+	  }
+	else if($options['verbose'])
+	  {
+	    echo "Column Transposition of ".($cols)." columns order ".join(' ', $thisorder)." did not find a match.\n";
+	  }
+	else if($options['debug'])
+	  {
+	    echo "Column Transposition of ".($cols)." columns order ".join(' ', $thisorder)." did not find a match:\n";
+	    echo $newciphertext . "\n\n";
+	  }
+      }
+  }

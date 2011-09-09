@@ -910,6 +910,7 @@ bootsie
 boris
 boss
 boston
+bottle
 bozo
 bradley
 brandon
@@ -1112,6 +1113,8 @@ deadhead
 dean
 debbie
 december
+decrypt
+decryption
 deedee
 deliver
 delta
@@ -1196,6 +1199,8 @@ elliot
 elsie
 elvis
 emily
+encrypt
+encryption
 energy
 enigma
 enter
