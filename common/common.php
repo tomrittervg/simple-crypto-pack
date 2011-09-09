@@ -8,6 +8,8 @@ require("print-functions.php");
 require("str-functions.php");
 require("permute-functions.php");
 
+error_reporting(E_ERROR);
+
 $options = array();
 
 $tmp = getopt("vd", array("match-length:", "key:", "index-of-coincidence:", "index-only", "help"));
